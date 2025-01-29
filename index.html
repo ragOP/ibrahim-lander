@@ -272,7 +272,7 @@ Click the button below to get started, it'll only take you a minute.
             display1.style.display = "none";
             display2.style.display = "block";
             const newUrl = new URL(window.location.href);
-            newUrl.searchParams.set("currently_insured", "Yes");
+            newUrl.searchParams.set("insured", "3");
             window.history.pushState({
                 path: newUrl.href,
             },
@@ -286,7 +286,7 @@ Click the button below to get started, it'll only take you a minute.
             display1.style.display = "none";
             display2.style.display = "block";
             const newUrl = new URL(window.location.href);
-            newUrl.searchParams.set("currently_insured", "No");
+            newUrl.searchParams.set("insured", "2");
             window.history.pushState({
                 path: newUrl.href,
             },

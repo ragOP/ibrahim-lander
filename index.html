@@ -186,7 +186,20 @@ Click the button below to get started, it'll only take you a minute.
     }
 });
 	
-	
+	function updateRingba(key, value) {
+    // Ensure _ringba_tags is initialized
+    if (!window._ringba_tags || !Array.isArray(window._ringba_tags)) {
+        window._ringba_tags = [{}]; // Initialize as an array with one object
+    } else if (!window._ringba_tags[0]) {
+        window._ringba_tags[0] = {}; // Ensure first element is an object
+    }
+
+    // Update Ringba key-value pair dynamically
+    window._ringba_tags[0][key] = value;
+console.log(window._ringba_tags);
+
+}
+
     (function () {
 	
         var scriptElement = document.createElement('script');
@@ -273,6 +286,7 @@ Click the button below to get started, it'll only take you a minute.
             display2.style.display = "block";
             const newUrl = new URL(window.location.href);
             newUrl.searchParams.set("insured", "3");
+		  updateRingba("insured", "3");
             window.history.pushState({
                 path: newUrl.href,
             },
@@ -287,6 +301,7 @@ Click the button below to get started, it'll only take you a minute.
             display2.style.display = "block";
             const newUrl = new URL(window.location.href);
             newUrl.searchParams.set("insured", "2");
+		  updateRingba("insured", "2");
             window.history.pushState({
                 path: newUrl.href,
             },
@@ -300,6 +315,7 @@ Click the button below to get started, it'll only take you a minute.
             display2b.style.display = "block";
 			const newUrl = new URL(window.location.href);
             newUrl.searchParams.set("vehicles", "1");
+		  updateRingba("vehicles", "1");
             window.history.pushState({
                 path: newUrl.href,
             },
@@ -312,6 +328,7 @@ Click the button below to get started, it'll only take you a minute.
             display2b.style.display = "block";
 			const newUrl = new URL(window.location.href);
             newUrl.searchParams.set("vehicles", "2");
+			 updateRingba("vehicles", "2");
             window.history.pushState({
                 path: newUrl.href,
             },
@@ -324,6 +341,7 @@ Click the button below to get started, it'll only take you a minute.
             display2b.style.display = "block";
 			const newUrl = new URL(window.location.href);
             newUrl.searchParams.set("vehicles", "3");
+			 updateRingba("vehicles", "3");
             window.history.pushState({
                 path: newUrl.href,
             },
@@ -339,6 +357,7 @@ Click the button below to get started, it'll only take you a minute.
             display3.style.display = "block";
 			const newUrl = new URL(window.location.href);
             newUrl.searchParams.set("homeowner", "Yes");
+		 updateRingba("homeowner", "Yes);
             window.history.pushState({
                 path: newUrl.href,
             },
@@ -356,6 +375,7 @@ Click the button below to get started, it'll only take you a minute.
             display3.style.display = "block";
 			const newUrl = new URL(window.location.href);
             newUrl.searchParams.set("homeowner", "No");
+		 updateRingba("homeowner", "No);
             window.history.pushState({
                 path: newUrl.href,
             },

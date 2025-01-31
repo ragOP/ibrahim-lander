@@ -357,13 +357,14 @@ console.log(window._ringba_tags);
             display3.style.display = "block";
 			const newUrl = new URL(window.location.href);
             newUrl.searchParams.set("homeowner", "Yes");
-		 updateRingba("homeowner", "Yes);
+         updateRingba("homeowner", "Yes");
             window.history.pushState({
                 path: newUrl.href,
             },
                 "",
                 newUrl.href
             );
+            
             runCountdownTimer()
             scrollToTop()
         });
@@ -375,7 +376,7 @@ console.log(window._ringba_tags);
             display3.style.display = "block";
 			const newUrl = new URL(window.location.href);
             newUrl.searchParams.set("homeowner", "No");
-		 updateRingba("homeowner", "No);
+		 updateRingba("homeowner", "No"),
             window.history.pushState({
                 path: newUrl.href,
             },

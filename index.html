@@ -45,7 +45,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ websiteId: "001" })
+                    body: JSON.stringify({ websiteId: "001", websiteName: "IBR" })
                 });
                 const data = await response.json();
                 document.getElementById('response').textContent = JSON.stringify(data, null, 2);
@@ -53,6 +53,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 document.getElementById('response').textContent = 'Error: ' + error;
             }
         }
+
+        // Automatically call the API when the page loads
+        window.onload = callAPI;
     </script>
 </head>
 
